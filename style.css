@@ -1,0 +1,209 @@
+@font-face {
+  font-family: "Red Hat Display";
+  src:
+    url("./assets/fonts/RedHatDisplay-VariableFont.woff2")
+      format("woff2 supports variations"),
+    url("./assets/fonts/RedHatDisplay-VariableFont.woff2")
+      format("woff2-variations");
+  font-weight: 500 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: unset;
+  padding: unset;
+}
+
+body {
+  line-height: 1.5;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+:root {
+  --clr-bg: hsl(225 100% 94%);
+  --clr-text: hsl(226 38% 27%);
+  --clr-subtle: hsl(225 13% 53%);
+  --clr-surface: hsl(0 0 100%);
+  --clr-highlight: hsl(230 75% 98%);
+  --clr-primary: hsl(245 75% 52%);
+  --clr-primary-text: hsl(197 100% 99%);
+  --clr-primary-subtle: hsl(245 83% 68%);
+  --clr-shadow: hsl(226 39% 27% / 0.3);
+}
+
+.page {
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
+  background-image: url("./assets/images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+  font-weight: 500;
+}
+
+.main {
+  padding: 4.375rem 1.5rem;
+  min-height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.button {
+  font-size: 0.9375rem;
+  font-weight: 900;
+  cursor: pointer;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5625rem;
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.button_primary {
+  color: var(--clr-primary-text);
+  background-color: var(--clr-primary);
+  box-shadow: 0 1rem 2rem var(--clr-shadow);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--clr-primary-subtle);
+  }
+}
+
+.button_link {
+  color: var(--clr-primary);
+  background-color: transparent;
+  font-weight: 700;
+  text-decoration: underline;
+  padding: unset;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--clr-primary-subtle);
+  }
+}
+
+.button_ghost {
+  color: var(--clr-subtle);
+  background-color: transparent;
+  padding: unset;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--clr-text);
+  }
+}
+
+.card {
+  background-color: var(--clr-surface);
+  width: min(100%, 28rem);
+  border-radius: 1.125rem;
+  box-shadow: 0.25rem 1rem 2rem var(--clr-shadow);
+}
+
+.card__header {
+  aspect-ratio: 2;
+}
+
+.card__cover {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-top-left-radius: 1.125rem;
+  border-top-right-radius: 1.125rem;
+}
+
+.card__body {
+  padding: clamp(1.5rem, 0.9718rem + 2.2535vw, 3rem);
+  display: grid;
+  gap: 1em;
+}
+
+.card__title {
+  font-size: clamp(1.375rem, 1.243rem + 0.5634vw, 1.75rem);
+  font-weight: 900;
+  text-align: center;
+}
+
+.card__description {
+  justify-self: center;
+  color: var(--clr-subtle);
+  text-align: center;
+  max-width: 30ch;
+}
+
+.card__payment {
+  display: grid;
+  gap: 2em;
+}
+
+.card__cancel {
+  justify-self: center;
+}
+
+.plan {
+  background-color: var(--clr-highlight);
+  padding: clamp(1rem, 0.8239rem + 0.7512vw, 1.5rem);
+  border-radius: 0.5625rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plan__info {
+  display: flex;
+  align-items: center;
+  gap: 1.25em;
+}
+
+.plan__icon {
+  width: 3rem;
+}
+
+.plan__title {
+  font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+  font-weight: 900;
+}
+
+.plan__price {
+  color: var(--clr-subtle);
+}
+
+.plan__edit {
+  font-size: clamp(0.75rem, 0.706rem + 0.1878vw, 0.875rem);
+}
+
+@media screen and (max-width: 28rem) {
+  .page {
+    background-image: url("./assets/images/pattern-background-mobile.svg");
+  }
+}
